@@ -79,3 +79,18 @@
    Tablet: 768px | Desktop: 1024px | Desktop grande: 1280px
    Nota: não usar var() em @media — usar o valor direto (ex: @media (min-width: 768px)) */
 }
+
+html[data-alto-contraste] {
+    --azul-petroleo: #00264d;
+    --azul-medio: #00264d;
+    --azul-ceu: #0059b3;
+    --dourado: #ffdf00;
+    --dourado-claro: #ffeb70;
+    --verde-folha: #005522;
+    --verde-suave: #cce6cc;
+    --branco-creme: #ffffff;
+    --cinza-escuro: #000000;
+    --cinza-medio: #202020;
+    --vermelho-forte: #b00020;
+    --vermelho-medio: #b00020;
+}

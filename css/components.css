@@ -82,6 +82,29 @@
     text-decoration: underline;
 }
 
+#button-contraste {
+    flex-shrink: 0;
+    min-height: 44px;
+    padding: var(--space-sm) var(--space-md);
+    border: 2px solid var(--cor-fundo);
+    border-radius: var(--space-sm);
+    color: var(--cor-fundo);
+    background-color: transparent;
+    font-weight: var(--peso-semibold);
+    cursor: pointer;
+}
+
+#button-contraste[aria-pressed="true"] {
+    color: var(--cor-texto);
+    background-color: var(--cor-destaque);
+    border-color: var(--cor-destaque);
+}
+
+#button-contraste:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 4px;
+}
+
 .titulo-pagina,
 .secao-cabecalho h1 {
     font-size: var(--fs-xl);
@@ -878,6 +901,25 @@ footer a:focus-visible {
 .rede-youtube:hover,
 .rede-youtube:focus-visible {
     color: #ff0000;
+}
+
+/* A versão de alto contraste mantém texto e controles legíveis nos cartões. */
+html[data-alto-contraste] .cards-ajuda .card-acao:nth-child(2) {
+    --cor-card-acao: var(--cor-primaria);
+}
+
+html[data-alto-contraste] .card-apoio--unica .icone-card-apoio,
+html[data-alto-contraste] .rede-instagram:hover,
+html[data-alto-contraste] .rede-instagram:focus-visible,
+html[data-alto-contraste] .rede-youtube:hover,
+html[data-alto-contraste] .rede-youtube:focus-visible {
+    color: var(--cor-primaria);
+}
+
+html[data-alto-contraste] :focus-visible {
+    outline: 3px solid #000000 !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px #ffdf00 !important;
 }
 
 @media (min-width: 768px) {

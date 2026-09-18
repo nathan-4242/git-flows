@@ -1,4 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const buttonContraste = document.getElementById("button-contraste");
+    let contrasteAtivo = false;
+
+    try {
+        contrasteAtivo = localStorage.getItem("altoContraste") === "true";
+    } catch (erro) {
+        // O controle continua funcionando nesta página se o armazenamento estiver indisponível.
+    }
+
+    function aplicarContraste() {
+        document.documentElement.toggleAttribute("data-alto-contraste", contrasteAtivo);
+        buttonContraste.setAttribute("aria-pressed", String(contrasteAtivo));
+    }
+
+    aplicarContraste();
+    buttonContraste.addEventListener("click", () => {
+        contrasteAtivo = !contrasteAtivo;
+        aplicarContraste();
+        try {
+            localStorage.setItem("altoContraste", String(contrasteAtivo));
+        } catch (erro) {
+            // Sem armazenamento, a escolha vale até a página ser recarregada.
+        }
+    });
+
     const buttonHamb = document.getElementById("button-menu");
     const navHeader = document.getElementById("nav-topo");
     function fecharMenu() {

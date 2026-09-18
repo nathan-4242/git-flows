@@ -23,7 +23,10 @@
             <div class="logo-container">
                 <a href="#/inicio" class="marca-header">
                     <span class="marca-simbolo" aria-hidden="true">
-                        <img src="../imagens/simbolo-header-colorido.png" alt="">
+                        <picture>
+                            <source srcset="../imagens/simbolo-header-colorido-128.webp" type="image/webp">
+                            <img src="../imagens/simbolo-header-colorido.png" alt="" width="128" height="128">
+                        </picture>
                     </span>
                     <span class="marca-nome"><span class="marca-instituto">Instituto</span>Tempo Tranquilo</span>
                 </a>
@@ -40,6 +43,7 @@
                         <li><a href="#/inicio/newsletter">Contato</a></li>
                     </ul>
                 </nav>
+                <button type="button" id="button-contraste" aria-pressed="false">Alto contraste</button>
                 <div>
                     <button type="button" id="button-doacao">Ajude uma vida</button>
                 </div>
@@ -56,7 +60,11 @@
     <footer>
         <div id="footer-topo">
             <div class="logo-container">
-                <img src="../imagens/logo-instituto-tempo-tranquilo.png" alt="Logo do Instituto Tempo Tranquilo">
+                <picture>
+                    <source srcset="../imagens/logo-instituto-tempo-tranquilo-160.webp" type="image/webp">
+                    <img src="../imagens/logo-instituto-tempo-tranquilo.png" alt="Logo do Instituto Tempo Tranquilo"
+                        width="160" height="160" loading="lazy" decoding="async">
+                </picture>
             </div>
             <nav aria-label="Institucional">
                 <h3>Institucional</h3>

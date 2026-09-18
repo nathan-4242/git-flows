@@ -11,8 +11,15 @@ function templateHome() {
                 <p class="apresentacao-convite">Cada visita, cada gesto, transforma uma vida.</p>
             </div>
 
-            <div class="container-imagem-apresentacao"><img src="../imagens/idosos-acolhimento.jpg"
-                    alt="Idosa sorridente sendo acolhida por uma cuidadora do Instituto Tempo Tranquilo durante uma refeição em grupo">
+            <div class="container-imagem-apresentacao">
+                <picture>
+                    <source type="image/webp"
+                        srcset="../imagens/idosos-acolhimento-480.webp 480w, ../imagens/idosos-acolhimento-960.webp 960w, ../imagens/idosos-acolhimento-1440.webp 1440w"
+                        sizes="(min-width: 768px) 58vw, 100vw">
+                    <img src="../imagens/idosos-acolhimento.jpg"
+                        alt="Idosa sorridente sendo acolhida por uma cuidadora do Instituto Tempo Tranquilo durante uma refeição em grupo"
+                        width="1536" height="1024" fetchpriority="high" decoding="async">
+                </picture>
             </div>
 
         </section>
@@ -74,8 +81,14 @@ function templateHome() {
                         cuidado,
                         convivência e dignidade para a terceira idade.</p>
                 </div>
-                <img class="ilustracao-secao" src="../imagens/ilustracao-quem-somos.png"
-                    alt="Ilustração de três idosos e uma cuidadora reunidos ao redor da árvore símbolo do Instituto Tempo Tranquilo">
+                <picture class="ilustracao-secao">
+                    <source type="image/webp"
+                        srcset="../imagens/ilustracao-quem-somos-480.webp 480w, ../imagens/ilustracao-quem-somos-960.webp 960w, ../imagens/ilustracao-quem-somos-1440.webp 1440w"
+                        sizes="(min-width: 768px) 50vw, 100vw">
+                    <img src="../imagens/ilustracao-quem-somos.png"
+                        alt="Ilustração de três idosos e uma cuidadora reunidos ao redor da árvore símbolo do Instituto Tempo Tranquilo"
+                        width="1536" height="1024" loading="lazy" decoding="async">
+                </picture>
             </div>
         </section>
 
@@ -86,8 +99,14 @@ function templateHome() {
                     <p>Oferecemos alimentação diária, acompanhamento de saúde básico, atividades de convivência e apoio
                         emocional para idosos que muitas vezes não têm mais rede de apoio familiar próxima.</p>
                 </div>
-                <img class="ilustracao-secao" src="../imagens/ilustracao-o-que-fazemos.png"
-                    alt="Ilustração de um idoso tomando café no sofá enquanto conversa com uma funcionária do instituto">
+                <picture class="ilustracao-secao">
+                    <source type="image/webp"
+                        srcset="../imagens/ilustracao-o-que-fazemos-480.webp 480w, ../imagens/ilustracao-o-que-fazemos-960.webp 960w, ../imagens/ilustracao-o-que-fazemos-1440.webp 1440w"
+                        sizes="(min-width: 768px) 50vw, 100vw">
+                    <img src="../imagens/ilustracao-o-que-fazemos.png"
+                        alt="Ilustração de um idoso tomando café no sofá enquanto conversa com uma funcionária do instituto"
+                        width="1536" height="1024" loading="lazy" decoding="async">
+                </picture>
             </div>
         </section>
 
@@ -152,8 +171,14 @@ function templateProjetos() {
                 <a class="projetos-cta" href="#realizacoes">Conheça os projetos <span aria-hidden="true">↓</span></a>
             </div>
             <div class="container-imagem-apresentacao">
-                <img src="../imagens/doacao-impacto.jpg"
-                    alt="Idoso sorridente segurando as mãos de um voluntário do Instituto Tempo Tranquilo">
+                <picture>
+                    <source type="image/webp"
+                        srcset="../imagens/doacao-impacto-480.webp 480w, ../imagens/doacao-impacto-960.webp 960w, ../imagens/doacao-impacto-1440.webp 1440w"
+                        sizes="(min-width: 768px) 50vw, 100vw">
+                    <img src="../imagens/doacao-impacto.jpg"
+                        alt="Idoso sorridente segurando as mãos de um voluntário do Instituto Tempo Tranquilo"
+                        width="1660" height="947" fetchpriority="high" decoding="async">
+                </picture>
             </div>
         </section>
 
@@ -177,8 +202,14 @@ function templateProjetos() {
                     </div>
                 </div>
                 <div class="realizacao-imagem">
-                    <img src="../imagens/reencontro-familiar.jpg"
-                        alt="Idosa emocionada durante reencontro com um familiar">
+                    <picture>
+                        <source type="image/webp"
+                            srcset="../imagens/reencontro-familiar-480.webp 480w, ../imagens/reencontro-familiar-960.webp 960w, ../imagens/reencontro-familiar-1440.webp 1440w"
+                            sizes="(min-width: 768px) 45vw, 100vw">
+                        <img src="../imagens/reencontro-familiar.jpg"
+                            alt="Idosa emocionada durante reencontro com um familiar" width="1536" height="1024"
+                            loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
 
@@ -196,8 +227,14 @@ function templateProjetos() {
                     </div>
                 </div>
                 <div class="realizacao-imagem">
-                    <img src="../imagens/oficina-memorias.jpg"
-                        alt="Idosos participando da Oficina de Memórias em roda de conversa">
+                    <picture>
+                        <source type="image/webp"
+                            srcset="../imagens/oficina-memorias-480.webp 480w, ../imagens/oficina-memorias-960.webp 960w, ../imagens/oficina-memorias-1440.webp 1440w"
+                            sizes="(min-width: 768px) 45vw, 100vw">
+                        <img src="../imagens/oficina-memorias.jpg"
+                            alt="Idosos participando da Oficina de Memórias em roda de conversa" width="1536" height="1024"
+                            loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
 
@@ -215,8 +252,14 @@ function templateProjetos() {
                     </div>
                 </div>
                 <div class="realizacao-imagem">
-                    <img src="../imagens/volta-convivio.jpg"
-                        alt="Idoso sorridente participando de atividade em grupo no instituto">
+                    <picture>
+                        <source type="image/webp"
+                            srcset="../imagens/volta-convivio-480.webp 480w, ../imagens/volta-convivio-960.webp 960w, ../imagens/volta-convivio-1440.webp 1440w"
+                            sizes="(min-width: 768px) 45vw, 100vw">
+                        <img src="../imagens/volta-convivio.jpg"
+                            alt="Idoso sorridente participando de atividade em grupo no instituto" width="1578" height="997"
+                            loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
         </section>

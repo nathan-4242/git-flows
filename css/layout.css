@@ -1,0 +1,662 @@
+/* Mobile */
+
+
+/* Pega toda a largura do viewport */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--azul-medio);
+    z-index: 100;
+}
+
+/* Pega toda a largura do header sem limite de largura e com o padding para respiro */
+
+/* display flex e conteúdo justificado horizontal e verticalmente */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-xl);
+    flex-wrap: wrap;
+}
+
+
+.nav-header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 85%;
+    max-width: 360px;
+    padding: var(--space-xl) var(--space-lg);
+    background-color: var(--azul-medio);
+    z-index: 1000;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 300ms ease, visibility 0s 300ms;
+    gap: var(--space-xl);
+
+    overflow-y: auto;
+}
+
+#button-doacao {
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    padding: 2px;
+}
+
+.nav-header.menu-aberto {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 300ms ease;
+}
+
+.menu-marca {
+    width: 100%;
+    text-align: center;
+}
+
+#button-menu {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+#button-menu[aria-expanded="true"] {
+    position: fixed;
+    top: var(--space-md);
+    right: var(--space-sm);
+    z-index: 1001;
+}
+
+body.menu-aberto {
+    overflow: hidden;
+}
+
+body.menu-aberto .header-container::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 999;
+}
+
+
+.logo-container {
+    display: block;
+    width: 5rem;
+    flex-shrink: 0;
+}
+
+
+/* Vai distribuir o espaçamento horizontal igualmente entre os itens li */
+.nav-header ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-xl);
+    align-items: flex-start;
+
+}
+
+/* transforma a lista em uma lista horizontal */
+.nav-header ul li {
+    display: inline;
+
+
+}
+
+/* Pequena margem para espaçamento */
+/* .nav-header ul li a {
+    margin: var(--space-md);
+} */
+
+
+.titulo-pagina {
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-md);
+}
+
+/* Problemas com encolhimento resolvidos com min-width */
+/* Itens flex (filhos de um contêiner display flex recebem min-width: auto implícito), o que pode causar efeitos de overflow */
+.container-texto {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+    max-width: var(--largura-xl);
+    min-width: 0;
+}
+
+.container-imagem-apresentacao {
+    width: 100%;
+    max-width: var(--largura-xl);
+    min-width: 0;
+}
+
+#realizacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2xl);
+    padding: var(--space-3xl) var(--space-lg);
+}
+
+.secao-cabecalho {
+    text-align: center;
+}
+
+.realizacao-card {
+    display: grid;
+    grid-template-areas:
+        "conteudo"
+        "imagem"
+        "dados";
+    align-items: center;
+    gap: var(--space-lg);
+    width: 100%;
+    max-width: var(--largura-xl);
+}
+
+.realizacao-conteudo {
+    display: flex;
+    flex-direction: column;
+    grid-area: conteudo;
+    gap: var(--space-sm);
+    min-width: 0;
+    text-align: center;
+}
+
+.realizacao-imagem {
+    grid-area: imagem;
+    min-width: 0;
+}
+
+.realizacao-imagem img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.realizacao-dados {
+    display: flex;
+    flex-direction: column;
+    grid-area: dados;
+    gap: var(--space-sm);
+    min-width: 0;
+    text-align: center;
+}
+
+#ajuda,
+#apoio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2xl);
+    padding: var(--space-3xl) var(--space-lg);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    width: 100%;
+    max-width: var(--largura-xl);
+}
+
+.card-acao {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+}
+
+.card-acao p {
+    flex: 1;
+}
+
+#atuacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px;
+    gap: 40px;
+}
+
+/* Mesma lógica -> ocupar o espaço todo e limitar algum tamanho */
+.atuacao-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    width: 100%;
+    max-width: var(--largura-xl);
+}
+
+#titulo-atuacao {
+    text-align: center;
+}
+
+/* Aqui ele usa display flex para justificar horizontal e verticalmente e text-align: center para o texto */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    box-shadow: 6px 4px 12px rgba(0, 0, 0, 0.15);
+    gap: var(--space-md);
+    padding: var(--space-md);
+}
+
+/* Para uma quebra de linhas envolvemos um dos filhos diretos de um container flex com outra div. */
+/* flex 1 ocupa o espaço disponível */
+.conteudo-card {
+    flex: 1;
+    text-align: center;
+}
+
+
+#depoimento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px var(--space-lg);
+    gap: 40px;
+}
+
+
+#depoimento blockquote {
+    max-width: var(--largura-md);
+    /* 700px, ajuste se achar estreito/largo demais */
+    min-width: 0;
+    text-align: center;
+}
+
+#depoimento video {
+    width: 100%;
+    max-width: var(--largura-md);
+    aspect-ratio: 16/9;
+    /* mesma largura do blockquote, mantém alinhamento visual */
+}
+
+#sobre-nos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px var(--space-lg);
+}
+
+#sobre-nos p {
+    min-width: 0;
+    max-width: var(--largura-md);
+}
+
+#oque-fazemos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px var(--space-lg);
+}
+
+#oque-fazemos p {
+    min-width: 0;
+    max-width: var(--largura-md);
+}
+
+
+.secao-formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px var(--space-lg);
+    gap: var(--space-xl);
+}
+
+#cadastro {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+}
+
+#news-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#input-container div input {
+    width: 100%;
+}
+
+#news-container p {
+    min-height: 0;
+    max-width: var(--largura-md);
+}
+
+#news-titulo {
+    min-width: 0;
+    text-align: center;
+    max-width: var(--largura-md);
+}
+
+.formulario-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    width: 100%;
+    max-width: var(--largura-md);
+}
+
+.formulario-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    text-align: left;
+    width: 100%;
+}
+
+.formulario-vertical fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+    min-width: 0;
+    padding: var(--space-lg);
+}
+
+.formulario-vertical input,
+.formulario-vertical select,
+.formulario-vertical button {
+    width: 100%;
+}
+
+.formulario-vertical button {
+    text-align: center;
+}
+
+
+#input-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+#checkbox-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+#button-container {
+    padding: var(--space-lg);
+}
+
+#button-container button {
+    width: 100%;
+}
+
+
+#footer-topo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    text-align: center;
+    row-gap: var(--space-md);
+}
+
+#footer-topo .logo-container {
+    grid-column: 1 / -1;
+    align-self: center;
+    justify-self: center;
+}
+
+#footer-topo nav[aria-label="Contato"] {
+    grid-column: auto;
+    text-align: center;
+}
+
+#footer-topo nav[aria-label="Legal"] {
+    grid-column: auto;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    margin: var(--space-md) 0;
+    background: linear-gradient(to right, transparent, var(--verde-suave), transparent);
+}
+
+#footer-contato {
+    display: grid;
+    gap: var(--space-md);
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+}
+
+#footer-contato address {
+    display: contents;
+
+}
+
+#nav-container ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    /* Remove as bolinhas da lista */
+    padding: 0;
+    margin: 0;
+    gap: var(--space-md);
+}
+
+
+#div-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    padding-inline: var(--space-md);
+    gap: var(--space-sm)
+}
+
+#cadastros-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--space-lg);
+    gap: var(--space-md);
+}
+
+#cadastros-lista li {
+    color: var(--cor-texto);
+    background-color: var(--cor-destaque);
+    padding: var(--space-sm);
+    border-radius: 18px;
+    font-family: var(--fonte-texto);
+    font-size: var(--fs-md);
+    transition: 0.2s;
+}
+
+#cadastros-lista li:hover {
+    transform: translateY(-4px);
+}
+
+@media (min-width:768px) {
+    .realizacao-card {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "conteudo imagem"
+            "dados imagem";
+    }
+
+    .realizacao-card--invertido {
+        grid-template-areas:
+            "imagem conteudo"
+            "imagem dados";
+    }
+
+    .realizacao-conteudo,
+    .realizacao-dados {
+        text-align: left;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cards-ajuda .card-acao:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - (var(--space-md) / 2));
+    }
+
+    .atuacao-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card[aria-label='Refeições'] {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    #footer-topo {
+        display: grid;
+        grid-template-columns: auto repeat(3, minmax(150px, 1fr));
+        gap: var(--space-sm);
+    }
+
+    #footer-topo nav[aria-label="Legal"] {
+        grid-column: 3;
+        text-align: center;
+    }
+
+    #footer-topo .logo-container {
+        grid-row: auto;
+        grid-column: auto;
+        justify-self: center;
+    }
+
+    #footer-contato {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #footer-contato address {
+        display: contents;
+
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .cards-ajuda {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cards-ajuda .card-acao:last-child {
+        grid-column: auto;
+        justify-self: stretch;
+        width: 100%;
+        max-width: none;
+    }
+
+    .atuacao-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card[aria-label='Refeições'] {
+        grid-column: auto;
+        justify-self: stretch;
+    }
+
+    #footer-topo {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(150px, 1fr));
+        gap: var(--space-sm);
+
+    }
+
+    #footer-topo nav[aria-label="Legal"] {
+        grid-column: auto;
+        text-align: center;
+    }
+
+
+    .nav-header,
+    .nav-header.menu-aberto {
+        display: flex;
+        align-items: center;
+        gap: var(--space-md);
+        width: auto;
+        flex: 1;
+        flex-direction: row;
+        position: static;
+        max-width: none;
+        height: auto;
+        padding: 0;
+        background-color: transparent;
+        z-index: auto;
+        transform: none;
+        visibility: visible;
+        pointer-events: auto;
+        transition: none;
+
+    }
+
+    .nav-header ul {
+        flex-direction: row;
+    }
+
+    .nav-header nav {
+        flex: 1;
+    }
+
+    #button-menu {
+        display: none;
+    }
+
+    body.menu-aberto {
+        overflow: auto;
+    }
+
+    body.menu-aberto .header-container::before {
+        display: none;
+    }
+
+    .menu-marca {
+        display: none;
+    }
+
+    #button-doacao {
+        width: 100%;
+    }
+}
+
+;

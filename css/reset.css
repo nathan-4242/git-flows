@@ -1,0 +1,77 @@
+/* Nesta seção também vamos resetar as fontes */
+/* Como o CSS segue uma ordem de cascata e o main.css já vai conter a ordem correta de importações, sendo a primeira a root, NÃO IMPORTAREMOS NADA AQUI */
+
+/* resetando globalmente incluindo pseudoelementos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* padroniza como largura/altura são calculadas */
+    margin: 0;
+    padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    font-family: var(--fonte-texto);
+    font-size: var(--fs-base);
+    line-height: var(--altura-linha-texto);
+    font-weight: var(--peso-regular);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+/* Fazendo com que elementos problemáticos (que não herdam por padrão certas coisas) herdem de fato - inherit */
+/* Isso é causado porque navegadores têm uma espécie de CSS nativo (agent stylesheet) e algumas propriedades são sobrescritas */
+
+button,
+input,
+textarea,
+select {
+    /* Herda as características da fonte; o segundo herda a cor */
+    font: inherit;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fonte-titulo);
+    line-height: var(--altura-linha-titulo);
+}
+
+/* Reset de listas */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Reset de links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reset de address */
+address {
+    font-style: normal;
+}
+
+/* reset de imagens */
+
+img,
+picture,
+video,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
